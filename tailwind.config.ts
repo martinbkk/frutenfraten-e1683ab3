@@ -71,6 +71,8 @@ export default {
       },
       fontFamily: {
         display: ['"Bebas Neue"', 'sans-serif'],
+        exotic: ['"Playfair Display"', 'serif'],
+        'serif-elegant': ['"Cormorant Garamond"', 'serif'],
         accent: ['"Caveat"', 'cursive'],
         body: ['"Inter"', 'sans-serif'],
       },

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=Caveat:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -76,6 +76,14 @@
 @layer components {
   .font-accent {
     font-family: 'Caveat', cursive;
+  }
+
+  .font-exotic {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-serif-elegant {
+    font-family: 'Cormorant Garamond', serif;
   }
 
   .text-gradient-sunset {

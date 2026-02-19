@@ -2,64 +2,93 @@ import ScrollReveal from "./ScrollReveal";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-padding bg-gradient-ocean relative film-grain">
-      <div className="max-w-6xl mx-auto">
-        <ScrollReveal>
-          <p className="font-accent text-2xl text-accent mb-2">Who is Roberto?</p>
-        </ScrollReveal>
-        <ScrollReveal delay={100}>
-          <h2 className="text-5xl md:text-7xl font-display text-gradient-sunset mb-8">
-            The Man Behind The Missions
-          </h2>
-        </ScrollReveal>
+    <section id="about" className="section-padding bg-gradient-ocean relative film-grain overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-20 right-0 w-72 h-72 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <ScrollReveal delay={200}>
-            <div className="space-y-6 text-foreground/80 font-body leading-relaxed">
-              <p className="text-lg">
-                Born in Sweden with Macedonian roots, Roberto has taken the world by storm with his
-                raw, unfiltered travel content. From the beaches of Rio to the streets of Bangkok,
-                he lives life with a boldness that's magnetic.
-              </p>
-              <p className="text-lg">
-                His channel exploded past 400K subscribers in record time — not because of perfect
-                production, but because of real connections with real people across the globe.
-              </p>
-              <p className="text-lg">
-                Roberto's mission is simple: live boldly, engage with the world, and find connection
-                everywhere he goes. His community, the{" "}
-                <span className="text-accent font-semibold">Wolfgang</span>, follows him on every
-                adventure.
-              </p>
-            </div>
-          </ScrollReveal>
+      <div className="max-w-6xl mx-auto relative">
+        <div className="grid md:grid-cols-5 gap-16 items-center">
+          {/* Left — Text (3 cols) */}
+          <div className="md:col-span-3 space-y-8">
+            <ScrollReveal>
+              <p className="font-accent text-2xl text-accent mb-1">Who is Roberto?</p>
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
+              <h2 className="text-5xl md:text-7xl font-exotic text-gradient-sunset leading-tight tracking-wide">
+                The Man Behind<br />The Missions
+              </h2>
+            </ScrollReveal>
 
-          <ScrollReveal delay={300}>
-            <div className="relative">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-sunset p-[2px]">
-                <div className="w-full h-full rounded-2xl bg-card flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <p className="font-display text-6xl text-gradient-sunset mb-4">434K+</p>
-                    <p className="text-muted-foreground font-body">Subscribers & Growing</p>
-                    <div className="mt-8 space-y-4">
-                      <div className="flex items-center gap-3">
-                        <span className="text-accent text-2xl">🌍</span>
-                        <span className="text-foreground/80">20+ Countries Explored</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <span className="text-accent text-2xl">🎬</span>
-                        <span className="text-foreground/80">Cinematic Travel Vlogs</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <span className="text-accent text-2xl">🐺</span>
-                        <span className="text-foreground/80">Wolfgang Community</span>
-                      </div>
+            <ScrollReveal delay={200}>
+              <div className="h-px w-24 bg-gradient-to-r from-accent to-transparent" />
+            </ScrollReveal>
+
+            <ScrollReveal delay={250}>
+              <p className="text-xl text-foreground/80 font-serif-elegant italic leading-relaxed">
+                "I want to inspire people to step out of their comfort zone, book that ticket,
+                and live a life they actually love."
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={300}>
+              <div className="space-y-5 text-foreground/70 font-body leading-relaxed">
+                <p>
+                  Born in Sweden with Macedonian roots, Roberto took the world by storm with raw,
+                  unfiltered travel content. From Rio's favelas to Bangkok's rooftops, he lives with
+                  a boldness that's magnetic — and 441K+ subscribers follow every step.
+                </p>
+                <p>
+                  His channel didn't blow up from perfect production. It exploded from real connections
+                  with real people — street vendors in Medellín, party legends in Marbella, monks in
+                  Chiang Mai. That authenticity built the <span className="text-accent font-semibold">Wolfgang</span> —
+                  a global tribe that rides with him on every mission.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* Right — Stats card (2 cols) */}
+          <div className="md:col-span-2">
+            <ScrollReveal delay={350}>
+              <div className="relative">
+                {/* Card with gold border glow */}
+                <div className="rounded-2xl bg-gradient-sunset p-[1px] gold-glow">
+                  <div className="rounded-2xl bg-card p-8 space-y-6">
+                    <div className="text-center mb-6">
+                      <p className="font-exotic text-6xl text-gradient-sunset tracking-wide">441K+</p>
+                      <p className="text-muted-foreground font-body text-sm mt-1">YouTube Subscribers</p>
+                    </div>
+
+                    <div className="h-px bg-border" />
+
+                    <div className="space-y-5">
+                      {[
+                        { icon: "🌍", label: "20+ Countries", detail: "Explored & Documented" },
+                        { icon: "🎬", label: "400+ Videos", detail: "Raw Travel Content" },
+                        { icon: "🐺", label: "Wolfgang", detail: "Global Community" },
+                        { icon: "🧴", label: "Fruten Fraten®", detail: "Perfume Brand" },
+                      ].map((stat) => (
+                        <div key={stat.label} className="flex items-center gap-4">
+                          <span className="text-2xl w-8 text-center">{stat.icon}</span>
+                          <div>
+                            <p className="text-foreground font-display text-lg tracking-wide">{stat.label}</p>
+                            <p className="text-muted-foreground text-xs">{stat.detail}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="h-px bg-border" />
+
+                    <div className="text-center">
+                      <p className="font-accent text-accent text-2xl">Fruten Fraten 🌴</p>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         </div>
       </div>
     </section>

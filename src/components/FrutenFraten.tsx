@@ -1,6 +1,9 @@
 import ScrollReveal from "./ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FrutenFraten = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="fruten-fraten" className="section-padding relative overflow-hidden">
       <div className="max-w-4xl mx-auto text-center">
@@ -10,29 +13,31 @@ const FrutenFraten = () => {
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={200}>
+          <p className="text-xl md:text-2xl text-foreground/80 font-body leading-relaxed mb-4">
+            {t("ff.desc")}
+          </p>
           <p className="text-xl md:text-2xl text-foreground/80 font-body leading-relaxed mb-8">
-            More than a catchphrase — it's a philosophy. It's about living in the moment, embracing
-            the chaos, and finding joy in every corner of the world. When Roberto says{" "}
-            <span className="font-accent text-accent text-3xl">"Fruten Fraten"</span>, it means
-            the adventure is about to get real.
+            {t("ff.when")}{" "}
+            <span className="font-accent text-accent text-3xl">"Fruten Fraten"</span>,{" "}
+            {t("ff.means")}
           </p>
         </ScrollReveal>
         <ScrollReveal delay={300}>
-          <div className="grid grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
             <div className="bg-card rounded-2xl p-6 border border-border gold-glow-hover transition-all duration-300">
               <p className="text-4xl mb-3">🌴</p>
-              <p className="font-display text-xl text-foreground">Live Bold</p>
-              <p className="text-sm text-muted-foreground mt-2">No comfort zones allowed</p>
+              <p className="font-display text-xl text-foreground">{t("ff.bold")}</p>
+              <p className="text-sm text-muted-foreground mt-2">{t("ff.bold.sub")}</p>
             </div>
             <div className="bg-card rounded-2xl p-6 border border-border gold-glow-hover transition-all duration-300">
               <p className="text-4xl mb-3">🤝</p>
-              <p className="font-display text-xl text-foreground">Stay Real</p>
-              <p className="text-sm text-muted-foreground mt-2">Authentic connections only</p>
+              <p className="font-display text-xl text-foreground">{t("ff.real")}</p>
+              <p className="text-sm text-muted-foreground mt-2">{t("ff.real.sub")}</p>
             </div>
             <div className="bg-card rounded-2xl p-6 border border-border gold-glow-hover transition-all duration-300">
               <p className="text-4xl mb-3">🔥</p>
-              <p className="font-display text-xl text-foreground">Party Hard</p>
-              <p className="text-sm text-muted-foreground mt-2">Life is a celebration</p>
+              <p className="font-display text-xl text-foreground">{t("ff.party")}</p>
+              <p className="text-sm text-muted-foreground mt-2">{t("ff.party.sub")}</p>
             </div>
           </div>
         </ScrollReveal>

@@ -2,6 +2,7 @@ import ScrollReveal from "./ScrollReveal";
 import perfumeCria from "@/assets/perfume-cria.jpg";
 import perfumeCosmo from "@/assets/perfume-cosmo.jpg";
 import perfumeFalang from "@/assets/perfume-falang.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const perfumes = [
   {
@@ -37,33 +38,31 @@ const perfumes = [
 ];
 
 const PerfumeShop = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="shop" className="section-padding relative overflow-hidden">
-      {/* Ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative">
         <ScrollReveal>
-          <p className="font-accent text-2xl text-accent mb-2 text-center">
-            Exclusive Collection
-          </p>
+          <p className="font-accent text-2xl text-accent mb-2 text-center">{t("shop.pre")}</p>
         </ScrollReveal>
         <ScrollReveal delay={100}>
           <h2 className="text-5xl md:text-7xl font-exotic text-gradient-sunset text-center mb-4 tracking-wide">
-            Fruten Fraten® Perfumes
+            {t("shop.title")}
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={150}>
           <p className="text-center text-foreground/60 font-serif-elegant italic text-lg max-w-2xl mx-auto mb-16">
-            Carry the spirit of adventure with you. Each fragrance tells a chapter of the journey.
+            {t("shop.subtitle")}
           </p>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {perfumes.map((perfume, i) => (
             <ScrollReveal key={perfume.name} delay={i * 150 + 200}>
               <div className="group relative bg-card rounded-2xl overflow-hidden border border-border gold-glow-hover transition-all duration-500 hover:-translate-y-3">
-                {/* Image */}
                 <div className="relative aspect-[3/4] overflow-hidden">
                   <img
                     src={perfume.image}
@@ -78,8 +77,6 @@ const PerfumeShop = () => {
                     </div>
                   )}
                 </div>
-
-                {/* Info */}
                 <div className="p-6 -mt-8 relative">
                   <p className="text-accent/70 text-xs font-display tracking-[0.2em] uppercase mb-1">
                     {perfume.subtitle}
@@ -91,20 +88,18 @@ const PerfumeShop = () => {
                     {perfume.description}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="font-display text-2xl text-accent">
-                      {perfume.price}
-                    </span>
+                    <span className="font-display text-2xl text-accent">{perfume.price}</span>
                     <a
                       href={perfume.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`px-6 py-2.5 rounded-lg font-display text-sm tracking-wider transition-all duration-300 ${
+                      className={`px-6 py-2.5 rounded-full font-display text-sm tracking-wider transition-all duration-300 ${
                         perfume.available
                           ? "bg-gradient-sunset text-primary-foreground gold-glow-hover hover:scale-105"
                           : "border border-border text-muted-foreground cursor-default"
                       }`}
                     >
-                      {perfume.available ? "Shop Now" : "Notify Me"}
+                      {perfume.available ? t("shop.now") : t("shop.notify")}
                     </a>
                   </div>
                 </div>
@@ -119,9 +114,9 @@ const PerfumeShop = () => {
               href="https://frutenfraten.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-accent/40 text-accent font-display text-lg tracking-wider gold-glow-hover transition-all duration-300 hover:scale-105 hover:border-accent"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-accent/40 text-accent font-display text-lg tracking-wider gold-glow-hover transition-all duration-300 hover:scale-105 hover:border-accent"
             >
-              Visit Full Store →
+              {t("shop.visit")} →
             </a>
           </div>
         </ScrollReveal>

@@ -1,22 +1,36 @@
 import ScrollReveal from "./ScrollReveal";
+import robertoCartoon from "@/assets/roberto-cartoon.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="section-padding bg-gradient-ocean relative film-grain overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-20 right-0 w-72 h-72 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto relative">
+      {/* Roberto cartoon - large, behind content on right */}
+      <div className="absolute -right-10 md:right-0 top-1/2 -translate-y-1/2 w-[300px] md:w-[500px] lg:w-[600px] opacity-15 md:opacity-20 pointer-events-none z-0">
+        <img
+          src={robertoCartoon}
+          alt=""
+          className="w-full h-auto object-contain mix-blend-lighten"
+          aria-hidden="true"
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid md:grid-cols-5 gap-16 items-center">
           {/* Left — Text (3 cols) */}
           <div className="md:col-span-3 space-y-8">
             <ScrollReveal>
-              <p className="font-accent text-2xl text-accent mb-1">Who is Roberto?</p>
+              <p className="font-accent text-2xl text-accent mb-1">{t("about.pre")}</p>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h2 className="text-5xl md:text-7xl font-exotic text-gradient-sunset leading-tight tracking-wide">
-                The Man Behind<br />The Missions
+                {t("about.title1")}<br />{t("about.title2")}
               </h2>
             </ScrollReveal>
 
@@ -26,24 +40,14 @@ const AboutSection = () => {
 
             <ScrollReveal delay={250}>
               <p className="text-xl text-foreground/80 font-serif-elegant italic leading-relaxed">
-                "I want to inspire people to step out of their comfort zone, book that ticket,
-                and live a life they actually love."
+                "{t("about.quote")}"
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={300}>
               <div className="space-y-5 text-foreground/70 font-body leading-relaxed">
-                <p>
-                  Born in Sweden with Macedonian roots, Roberto took the world by storm with raw,
-                  unfiltered travel content. From Rio's favelas to Bangkok's rooftops, he lives with
-                  a boldness that's magnetic — and 441K+ subscribers follow every step.
-                </p>
-                <p>
-                  His channel didn't blow up from perfect production. It exploded from real connections
-                  with real people — street vendors in Medellín, party legends in Marbella, monks in
-                  Chiang Mai. That authenticity built the <span className="text-accent font-semibold">Wolfgang</span> —
-                  a global tribe that rides with him on every mission.
-                </p>
+                <p>{t("about.bio1")}</p>
+                <p>{t("about.bio2")}</p>
               </div>
             </ScrollReveal>
           </div>
@@ -52,12 +56,11 @@ const AboutSection = () => {
           <div className="md:col-span-2">
             <ScrollReveal delay={350}>
               <div className="relative">
-                {/* Card with gold border glow */}
                 <div className="rounded-2xl bg-gradient-sunset p-[1px] gold-glow">
                   <div className="rounded-2xl bg-card p-8 space-y-6">
                     <div className="text-center mb-6">
                       <p className="font-exotic text-6xl text-gradient-sunset tracking-wide">441K+</p>
-                      <p className="text-muted-foreground font-body text-sm mt-1">YouTube Subscribers</p>
+                      <p className="text-muted-foreground font-body text-sm mt-1">{t("about.subs")}</p>
                     </div>
 
                     <div className="h-px bg-border" />
@@ -82,7 +85,7 @@ const AboutSection = () => {
                     <div className="h-px bg-border" />
 
                     <div className="text-center">
-                      <p className="font-accent text-accent text-2xl">Fruten Fraten 🌴</p>
+                      <p className="font-accent text-accent text-2xl">Fruten Fraten 🔥</p>
                     </div>
                   </div>
                 </div>

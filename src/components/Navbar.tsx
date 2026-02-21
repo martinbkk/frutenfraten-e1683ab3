@@ -1,22 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSelector from "./LanguageSelector";
-
-const PerfumeBottleIcon = () => (
-  <svg width="18" height="22" viewBox="0 0 24 28" fill="none" className="inline-block mr-1 -mt-0.5">
-    <rect x="7" y="12" width="10" height="14" rx="1.5" fill="url(#bottle-grad)" />
-    <rect x="9" y="8" width="6" height="4" rx="1" fill="hsl(45 90% 55%)" />
-    <line x1="12" y1="4" x2="12" y2="8" stroke="hsl(45 90% 55%)" strokeWidth="1.5" />
-    <line x1="10" y1="5.5" x2="14" y2="5.5" stroke="hsl(45 90% 55%)" strokeWidth="1.5" />
-    <text x="12" y="22" textAnchor="middle" fill="hsl(20 14% 4%)" fontSize="5" fontWeight="bold" fontFamily="sans-serif">FF</text>
-    <defs>
-      <linearGradient id="bottle-grad" x1="7" y1="12" x2="17" y2="26" gradientUnits="userSpaceOnUse">
-        <stop stopColor="hsl(24 95% 53%)" />
-        <stop offset="1" stopColor="hsl(12 80% 60%)" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
+import PerfumeBottleIcon from "./PerfumeBottleIcon";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -33,8 +18,8 @@ const Navbar = () => {
     { key: "nav.about", href: "#about" },
     { key: "nav.shop", href: "#shop" },
     { key: "nav.videos", href: "#videos" },
-    { key: "nav.destinations", href: "#destinations" },
     { key: "nav.wolfgang", href: "#wolfgang" },
+    { key: "nav.bar", href: "#bar" },
     { key: "nav.experience", href: "/experience" },
   ];
 
@@ -47,15 +32,12 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo - FF monogram + FRUTEN FRATEN */}
+        {/* Logo - Perfume Icon + FRUTEN FRATEN */}
         <a href="/" className="flex items-center gap-2 group">
-          <PerfumeBottleIcon />
-          <div className="flex flex-col leading-none">
-            <span className="font-display text-[0.6rem] tracking-[0.4em] text-foreground/50 uppercase">FF</span>
-            <span className="font-display text-sm md:text-base tracking-[0.2em] text-foreground uppercase">
-              Fruten Fraten
-            </span>
-          </div>
+          <PerfumeBottleIcon size={16} />
+          <span className="font-display text-sm md:text-base tracking-[0.2em] text-foreground uppercase">
+            Fruten Fraten
+          </span>
         </a>
 
         {/* Desktop nav */}
@@ -69,7 +51,6 @@ const Navbar = () => {
               {t(item.key)}
             </a>
           ))}
-          <LanguageSelector />
           <a
             href="https://www.youtube.com/@robertovstheworld"
             target="_blank"
@@ -78,6 +59,7 @@ const Navbar = () => {
           >
             {t("nav.subscribe")}
           </a>
+          <LanguageSelector />
         </div>
 
         {/* Mobile hamburger + language */}

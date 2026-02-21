@@ -2,10 +2,11 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import FeaturedVideos from "@/components/FeaturedVideos";
-import DestinationsSection from "@/components/DestinationsSection";
+// import DestinationsSection from "@/components/DestinationsSection"; // Hidden for now
 import PerfumeShop from "@/components/PerfumeShop";
 import FrutenFraten from "@/components/FrutenFraten";
 import WolfgangSection from "@/components/WolfgangSection";
+import FrutenFratenBar from "@/components/FrutenFratenBar";
 import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
@@ -16,9 +17,10 @@ const Index = () => {
       <AboutSection />
       <PerfumeShop />
       <FeaturedVideos />
-      <DestinationsSection />
+      {/* <DestinationsSection /> */}
       <FrutenFraten />
       <WolfgangSection />
+      <FrutenFratenBar />
       <FooterSection />
     </div>
   );

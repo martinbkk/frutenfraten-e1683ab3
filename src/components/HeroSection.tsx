@@ -1,14 +1,6 @@
 import heroBg from "@/assets/hero-roberto-sunset.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-const PerfumeIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="7" y="10" width="10" height="12" rx="1" />
-    <rect x="9" y="7" width="6" height="3" rx="0.5" />
-    <line x1="12" y1="4" x2="12" y2="7" />
-    <line x1="10" y1="5" x2="14" y2="5" />
-  </svg>
-);
+import PerfumeBottleIcon from "./PerfumeBottleIcon";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -23,8 +15,6 @@ const HeroSection = () => {
       {/* Gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/10 to-background" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/30 to-transparent" />
-
-      {/* No separate Roberto image - composited into background */}
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
@@ -48,7 +38,7 @@ const HeroSection = () => {
             href="#shop"
             className="group inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-gradient-sunset text-primary-foreground font-display text-lg tracking-widest gold-glow-hover transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(24_95%_53%/0.5)]"
           >
-            <PerfumeIcon />
+            <PerfumeBottleIcon size={14} className="opacity-90" />
             {t("hero.shop")}
           </a>
           {/* Experience Brazil CTA */}

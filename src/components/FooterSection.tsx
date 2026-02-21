@@ -1,4 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import robertoCartoon from "@/assets/roberto-cartoon.png";
+import PerfumeBottleIcon from "./PerfumeBottleIcon";
 
 const FooterSection = () => {
   const { t } = useLanguage();
@@ -8,13 +10,23 @@ const FooterSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="font-display text-base tracking-[0.2em] text-foreground mb-1 uppercase">
-              <span className="text-accent text-xs mr-1">FF</span> Fruten Fraten
-            </h3>
-            <p className="text-muted-foreground font-body text-sm leading-relaxed mt-3">
-              Travel creator, culture explorer, and founder of the Wolfgang community. Living life
-              one adventure at a time.
-            </p>
+            <div className="flex items-center gap-2 mb-3">
+              <PerfumeBottleIcon size={14} />
+              <h3 className="font-display text-base tracking-[0.2em] text-foreground uppercase">
+                Fruten Fraten
+              </h3>
+            </div>
+            <div className="flex items-start gap-3">
+              <img
+                src={robertoCartoon}
+                alt="Roberto"
+                className="w-10 h-10 rounded-full object-contain opacity-50 mt-0.5"
+              />
+              <p className="text-muted-foreground font-body text-sm leading-relaxed">
+                Travel creator, culture explorer, and founder of the Wolfgang community. Living life
+                one adventure at a time.
+              </p>
+            </div>
           </div>
 
           <div>
@@ -23,8 +35,8 @@ const FooterSection = () => {
               <li><a href="#about" className="transition-colors duration-200 hover:text-accent">{t("nav.about")}</a></li>
               <li><a href="#shop" className="transition-colors duration-200 hover:text-accent">{t("nav.shop")}</a></li>
               <li><a href="#videos" className="transition-colors duration-200 hover:text-accent">{t("nav.videos")}</a></li>
-              <li><a href="#destinations" className="transition-colors duration-200 hover:text-accent">{t("nav.destinations")}</a></li>
               <li><a href="#wolfgang" className="transition-colors duration-200 hover:text-accent">{t("nav.wolfgang")}</a></li>
+              <li><a href="#bar" className="transition-colors duration-200 hover:text-accent">{t("nav.bar")}</a></li>
               <li><a href="/experience" className="transition-colors duration-200 hover:text-accent">{t("nav.experience")}</a></li>
             </ul>
           </div>
@@ -46,7 +58,10 @@ const FooterSection = () => {
           <p className="text-muted-foreground text-sm font-body">
             © 2025 Roberto Vs The World. {t("footer.rights")}
           </p>
-          <p className="font-accent text-accent text-xl">Fruten Fraten 🔥</p>
+          <div className="flex items-center gap-2">
+            <PerfumeBottleIcon size={10} className="opacity-50" />
+            <p className="font-accent text-accent text-xl">Fruten Fraten 🔥</p>
+          </div>
         </div>
       </div>
     </footer>
